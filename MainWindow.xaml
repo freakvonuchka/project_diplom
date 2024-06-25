@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="Normal Distribution Calculator" Height="400" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Среднее значение (mean):" Margin="0,0,0,5"/>
+            <TextBox Name="MeanTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Стандартное отклонение (stdDev):" Margin="0,0,0,5"/>
+            <TextBox Name="StdDevTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Значения x (разделенные пробелами):" Margin="0,0,0,5"/>
+            <TextBox Name="ValuesTextBox" Margin="0,0,0,10"/>
+
+            <Button Content="Загрузить файл с значениями x" Click="LoadFile_Click" Margin="0,0,0,10"/>
+
+            <Button Content="Вычислить CDF" Click="CalculateCDF_Click" Margin="0,0,0,10"/>
+            <Button Content="Показать результаты" Click="ShowResults_Click" Margin="0,0,0,10"/>
+            <Button Content="Очистить результаты" Click="ClearResults_Click" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Результаты:" Margin="0,0,0,5"/>
+            <TextBox Name="ResultTextBox" IsReadOnly="True" Height="150" VerticalScrollBarVisibility="Auto"/>
+            <oxy:PlotView Name="PlotView" Height="200" Margin="0,20,0,0"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
